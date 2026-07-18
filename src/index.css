@@ -294,13 +294,13 @@ button {
   margin-bottom: 22px;
 }
 
-.section-title__line {
+/* .section-title__line {
   width: 32px;
   height: 4px;
   border-radius: 999px;
   background: linear-gradient(90deg, var(--purple-2), #c084fc);
   box-shadow: 0 0 14px rgba(168, 85, 247, 0.35);
-}
+} */
 
 .section-title__eyebrow {
   margin: 0 0 4px;
@@ -381,7 +381,7 @@ button {
 
 .service-card h3,
 .timeline-card__content h3,
-.detail-card h3,
+/* .detail-card h3, */
 .project-card h3,
 .resume-grid__heading h3,
 .contact-info strong {
@@ -391,7 +391,7 @@ button {
 
 .service-card p,
 .timeline-card__content p,
-.detail-card p,
+/* .detail-card p, */
 .project-card__description,
 .contact-copy p,
 .contact-info span,
@@ -857,4 +857,157 @@ button {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+.portfolio-filter{
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+
+    padding:30px;
+
+    border-radius:28px;
+
+    background:rgba(255,255,255,.88);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(168,85,247,.18);
+
+    box-shadow:
+        0 10px 40px rgba(124,58,237,.08),
+        inset 0 1px rgba(255,255,255,.7);
+
+    margin-bottom:40px;
+}
+
+.portfolio-filter__header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-end;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+}
+
+.portfolio-filter__subtitle{
+
+    color:#7c7c92;
+
+    font-size:.95rem;
+
+    font-weight:500;
+}
+
+.filter-pills{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:14px;
+}
+
+.filter-pill{
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    padding:12px 22px;
+
+    border-radius:999px;
+
+    font-size:.95rem;
+
+    font-weight:600;
+
+    color:#6d28d9;
+
+    background:#faf5ff;
+
+    transition:.35s;
+
+    border:1px solid rgba(168,85,247,.18);
+}
+
+.filter-pill:hover{
+
+    transform:translateY(-2px);
+
+    background:#ede9fe;
+
+    color:#5b21b6;
+
+    box-shadow:0 8px 18px rgba(124,58,237,.15);
+}
+
+.filter-pill.active{
+
+    color:white;
+
+    background:linear-gradient(
+        135deg,
+        #7c3aed,
+        #9333ea,
+        #c084fc
+    );
+
+    box-shadow:
+        0 10px 22px rgba(124,58,237,.35);
+
+    transform:translateY(-2px);
+}
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.section-title__line {
+    width: 4px;
+    height: 40px;
+    border-radius: 999px;
+    background: linear-gradient(
+        to bottom,
+        #7C3AED,
+        #A855F7,
+        #C084FC
+    );
+    flex-shrink: 0;
+}
+.detail-card h3 {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.detail-card p {
+    margin: 0;
+    line-height: 1.7;
+}
+.detail-card__muted {
+    color: #6b7280;
+    font-size: 0.95rem;
+}
+
+.detail-card {
+    background: #ffffff;
+    border: 1px solid rgba(139, 92, 246, 0.12);
+    border-radius: 24px;
+
+    padding: 28px;
+    margin-top: 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.08);
 }

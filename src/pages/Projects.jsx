@@ -1,28 +1,49 @@
-import { useMemo, useState } from 'react';
-import SectionTitle from '../components/SectionTitle';
-import ProjectCard from '../components/ProjectCard';
-import { projects } from '../data/projects';
+import { useMemo, useState } from "react";
+import SectionTitle from "../components/SectionTitle";
+import ProjectCard from "../components/ProjectCard";
+import { projects } from "../data/projects";
 
-const filters = ['All Projects', 'Web', 'Mobile App', 'Python', 'AI / ML'];
+const filters = ["All Projects", "Web", "Mobile App", "Python", "AI / ML"];
 
 export default function Projects() {
-  const [activeFilter, setActiveFilter] = useState('All Projects');
+  const [activeFilter, setActiveFilter] = useState("All Projects");
 
   const filteredProjects = useMemo(() => {
-    if (activeFilter === 'All Projects') {
+    if (activeFilter === "All Projects") {
       return projects;
     }
 
-    return projects.filter((project) => project.category.toLowerCase().includes(activeFilter.toLowerCase()) || project.type.toLowerCase().includes(activeFilter.toLowerCase()));
+    return projects.filter(
+      (project) =>
+        project.category.toLowerCase().includes(activeFilter.toLowerCase()) ||
+        project.type.toLowerCase().includes(activeFilter.toLowerCase()),
+    );
   }, [activeFilter]);
 
   return (
     <section className="page-stack page-animate">
-      <div className="content-shell">
-        <SectionTitle title="Portfolio" />
-        <div className="filter-pills" role="tablist" aria-label="Project filters">
+      <div className="portfolio-filter">
+        <div className="portfolio-filter__header">
+          <SectionTitle title="Portfolio" />
+          <span className="portfolio-filter__subtitle">
+            Explore my work by technology
+          </span>
+        </div>
+
+        <div
+          className="filter-pills"
+          role="tablist"
+          aria-label="Project filters"
+        >
           {filters.map((filter) => (
-            <button key={filter} className={`filter-pills__button ${activeFilter === filter ? 'is-active' : ''}`} onClick={() => setActiveFilter(filter)} type="button">
+            <button
+              key={filter}
+              type="button"
+              onClick={() => setActiveFilter(filter)}
+              className={`filter-pill ${
+                activeFilter === filter ? "active" : ""
+              }`}
+            >
               {filter}
             </button>
           ))}
