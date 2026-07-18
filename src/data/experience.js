@@ -30,30 +30,27 @@ export const education = {
     'Studying Information Technology with a focus on software engineering, backend development, data systems, cloud technologies, artificial intelligence, and machine learning.',
 };
 
-export const skills = [
-  'Python',
-  'Java',
-  'SQL',
-  'JavaScript',
-  'React',
-  'Flutter',
-  'Flask',
-  'FastAPI',
-  'REST APIs',
-  'PostgreSQL',
-  'MySQL',
-  'MongoDB',
-  'OpenCV',
-  'Scikit-learn',
-  'CNN',
-  'LSTM',
-  'Hugging Face Transformers',
-  'N8N',
-  'Hoppscotch',
-  'Git',
-  'GitHub',
-  'AWS',
-  'Figma',
+export const skillGroups = [
+  {
+    title: 'Frontend',
+    skills: ['JavaScript', 'React', 'Flutter', 'Figma']
+  },
+  {
+    title: 'Backend',
+    skills: ['Python', 'Java', 'Flask', 'FastAPI', 'REST APIs']
+  },
+  {
+    title: 'Databases',
+    skills: ['SQL', 'PostgreSQL', 'MySQL', 'MongoDB']
+  },
+  {
+    title: 'AI / ML',
+    skills: ['OpenCV', 'Scikit-learn', 'CNN', 'LSTM', 'Hugging Face Transformers']
+  },
+  {
+    title: 'Tools & Platforms',
+    skills: ['N8N', 'Hoppscotch', 'Git', 'GitHub', 'AWS']
+  }
 ];
 
 export const certifications = [

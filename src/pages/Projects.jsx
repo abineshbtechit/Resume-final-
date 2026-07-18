@@ -1,12 +1,24 @@
 import { useMemo, useState } from "react";
 import SectionTitle from "../components/SectionTitle";
 import ProjectCard from "../components/ProjectCard";
+import ProjectLaunchDialog from "../components/ProjectLaunchDialog";
 import { projects } from "../data/projects";
 
 const filters = ["All Projects", "Web", "Mobile App", "Python", "AI / ML"];
 
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState("All Projects");
+  const [launchProject, setLaunchProject] = useState(null);
+  const firstProjectSlug = projects[0]?.slug;
+
+  const handleOpenLiveApp = (project) => {
+    if (project.slug === firstProjectSlug) {
+      setLaunchProject(project);
+      return;
+    }
+
+    window.open(project.liveUrl, "_blank", "noopener,noreferrer");
+  };
 
   const filteredProjects = useMemo(() => {
     if (activeFilter === "All Projects") {
@@ -52,9 +64,11 @@ export default function Projects() {
 
       <div className="project-list">
         {filteredProjects.map((project) => (
-          <ProjectCard key={project.slug} project={project} />
+          <ProjectCard key={project.slug} project={project} onOpenLiveApp={handleOpenLiveApp} />
         ))}
       </div>
+
+      <ProjectLaunchDialog project={launchProject} onClose={() => setLaunchProject(null)} />
     </section>
   );
 }

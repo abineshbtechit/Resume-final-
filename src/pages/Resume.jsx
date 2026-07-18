@@ -2,7 +2,7 @@ import { ExternalLink, GraduationCap, Briefcase, Award, Sparkles } from 'lucide-
 import SectionTitle from '../components/SectionTitle';
 import TimelineCard from '../components/TimelineCard';
 import SkillCard from '../components/SkillCard';
-import { certifications, education, experience, publication, skills } from '../data/experience';
+import { certifications, education, experience, publication, skillGroups } from '../data/experience';
 
 export default function Resume() {
   return (
@@ -16,7 +16,7 @@ export default function Resume() {
           </a>
         </div>
 
-        <div className="resume-grid">
+        <div className="resume-topGrid">
           <div>
             <div className="resume-grid__heading">
               <Briefcase size={18} />
@@ -40,17 +40,30 @@ export default function Resume() {
               <p className="detail-card__muted">{education.grade}</p>
               <p>{education.description}</p>
             </article>
+          </div>
+        </div>
 
-            <div className="resume-grid__heading resume-grid__heading--spaced">
-              <Sparkles size={18} />
-              <h3>Skills</h3>
-            </div>
-            <div className="skills-grid">
-              {skills.map((skill) => (
-                <SkillCard key={skill} label={skill} />
-              ))}
-            </div>
+        <div className="resume-section">
+          <div className="resume-grid__heading">
+            <Sparkles size={18} />
+            <h3>Skills</h3>
+          </div>
+          <div className="skills-section">
+            {skillGroups.map((group) => (
+              <article className="skills-group-card" key={group.title}>
+                <h4>{group.title}</h4>
+                <div className="skills-grid">
+                  {group.skills.map((skill) => (
+                    <SkillCard key={skill} label={skill} />
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
 
+        <div className="resume-bottomGrid">
+          <div>
             <div className="resume-grid__heading resume-grid__heading--spaced">
               <Award size={18} />
               <h3>Certifications</h3>
@@ -62,7 +75,9 @@ export default function Resume() {
                 </article>
               ))}
             </div>
+          </div>
 
+          <div>
             <div className="resume-grid__heading resume-grid__heading--spaced">
               <Award size={18} />
               <h3>Publication</h3>

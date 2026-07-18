@@ -27,7 +27,8 @@ export const projects = [
       ],
       architecture:
         'Frontend form submission posts to Flask endpoints, content extraction runs through Newspaper3k and BeautifulSoup, gTTS creates audio, and the resulting file is streamed back for playback or download.',
-      screenshot: '/src/assets/images/text-to-audio-preview.svg',
+      screenshot: '/src/assets/images/texttoaudio.png',
+      gallery: ['/src/assets/images/texttoaudio.png'],
       embeddedUrl: 'https://text-to-speech-k17e.onrender.com/',
     },
   },
@@ -59,7 +60,8 @@ export const projects = [
       ],
       architecture:
         'The system combines a React interface with Flask APIs and Socket.IO events so queue changes push instantly to connected clients while wait-time predictions can be surfaced from backend logic.',
-      screenshot: '/src/assets/videos/hospital-token-booking.mp4',
+      screenshot: '/src/assets/images/hospital.png',
+      gallery: ['/src/assets/images/hospital.png'],
     },
   },
   {
@@ -118,6 +120,7 @@ export const projects = [
       architecture:
         'FastAPI handles complaint intake and AI classification, React Native provides the mobile interface, and MongoDB stores grievance records and updates.',
       screenshot: '/src/assets/images/voice2gov.png',
+      gallery: ['/src/assets/images/voice2gov.png'],
     },
   },
   {
