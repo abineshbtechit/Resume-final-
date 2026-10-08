@@ -1,7 +1,7 @@
 export const projects = [
   {
-    slug: 'text-to-audio-generator',
-    title: 'Text-to-Audio Generator',
+    slug: 'text-to-audio-generators',
+    title: 'Text-to-Audio Generators',
     year: '2026',
     category: 'Python / Web',
     featured: true,
