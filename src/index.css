@@ -5,7 +5,7 @@
   --card-soft: rgba(255, 255, 255, 0.88);
   --text: #111827;
   --muted: #4b5563;
-  --border: #e5e7eb;
+  --border: #c6cbd8;
   --purple: #9333ea;
   --purple-2: #a855f7;
   --purple-soft: #f3e8ff;
@@ -261,7 +261,7 @@ button {
 .content-shell {
   position: relative;
   background: var(--card);
-  border: 1px solid rgba(147, 51, 234, 0.3);
+  border: 1px solid rgba(74, 85, 104, 0.18);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow);
   padding: 30px;
@@ -277,18 +277,6 @@ button {
   height: 4px;
   background: linear-gradient(90deg, transparent, var(--purple), transparent);
   border-radius: 999px;
-}
-
-.content-shell::after {
-  content: '';
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--purple);
-  top: 10px;
-  left: 10px;
-  box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.18);
 }
 
 .content-shell__headerRow {
@@ -321,14 +309,6 @@ button {
   gap: 14px;
   margin-bottom: 22px;
 }
-
-/* .section-title__line {
-  width: 32px;
-  height: 4px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--purple-2), #c084fc);
-  box-shadow: 0 0 14px rgba(168, 85, 247, 0.35);
-} */
 
 .section-title__eyebrow {
   margin: 0 0 4px;
@@ -517,8 +497,14 @@ button {
   margin-bottom: 10px !important;
   font-weight: 600;
 }
+.skills-grid
+{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
 
-.skills-grid,
+/* .skills-grid, */
 .cert-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -529,7 +515,7 @@ button {
 .mini-card {
   position: relative;
   border-radius: 14px;
-  padding: 14px 16px 14px 18px;
+  padding: 14px 16px 14px 25px;
 }
 
 .skill-card::before,
@@ -594,15 +580,14 @@ button {
 }
 
 .project-card__year {
-  margin: 0;
+  margin:3px;
+  margin-left: 5px;
   font-weight: 700;
 }
 
 .badge {
   display: inline-flex;
-  align-items: center;
   padding: 3px 10px;
-  margin-left: 10px;
   border: 1px solid rgba(168, 85, 247, 0.25);
   border-radius: 999px;
   background: #f5ebff;
@@ -614,7 +599,7 @@ button {
   aspect-ratio: 4 / 3;
   overflow: hidden;
   border-radius: 18px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(74, 85, 104, 0.18);
   background: #fafafa;
 }
 
@@ -718,6 +703,68 @@ button {
   height: 100%;
   min-height: 220px;
   object-fit: cover;
+}
+
+.detail-video-shell {
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  border-radius: 24px;
+  border: 1px solid rgba(168, 85, 247, 0.14);
+  background: linear-gradient(180deg, #ffffff, #f9f5ff);
+  box-shadow: 0 12px 28px rgba(17, 24, 39, 0.06);
+}
+
+.detail-video-shell--tablet {
+  width: min(860px, 100%);
+  margin: 0 auto;
+  padding: 18px 20px 22px;
+  border: 2px solid #1f1f1f;
+  background: linear-gradient(180deg, #151515, #050505);
+  box-shadow:
+    0 24px 48px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  border-radius: 34px;
+  position: relative;
+}
+
+.detail-video-shell--tablet::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  width: 88px;
+  height: 8px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: linear-gradient(180deg, #2f2f2f, #171717);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.detail-video-shell--tablet::after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #4a4a4a, #0b0b0b 70%);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.detail-video-shell__video {
+  width: 100%;
+  max-width: 760px;
+  aspect-ratio: 4 / 3;
+  border-radius: 24px;
+  border: 6px solid #000;
+  background: #000;
+  object-fit: cover;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04),
+    0 18px 34px rgba(0, 0, 0, 0.26);
 }
 
 .detail-section h3 {
@@ -1079,6 +1126,22 @@ button {
   .detail-screenshots img,
   .detail-screenshots iframe {
     min-height: 240px;
+  }
+
+  .detail-video-shell {
+    padding: 12px;
+  }
+
+  .detail-video-shell--tablet {
+    padding: 14px 14px 16px;
+    border-width: 2px;
+    border-radius: 28px;
+  }
+
+  .detail-video-shell__video {
+    max-width: 100%;
+    aspect-ratio: 4 / 3;
+    border-width: 5px;
   }
 
   .project-card__actions,

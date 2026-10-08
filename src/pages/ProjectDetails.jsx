@@ -8,6 +8,7 @@ export default function ProjectDetails() {
   const { slug } = useParams();
   const project = projects.find((item) => item.slug === slug);
   const isMobileProject = project?.type === 'mobile';
+  const isHospitalTokenBooking = project?.slug === 'hospital-token-booking';
 
   if (!project) {
     return <Navigate to="/not-found" replace />;
@@ -19,7 +20,7 @@ export default function ProjectDetails() {
         <SectionTitle title={project.title} />
         <div className="project-detail-grid">
           <div className="project-detail-card">
-            <div className="project-detail-copy">
+            <div className="project-detail-copyx">
               <p className="project-detail-copy__eyebrow">{project.category}</p>
               <p>{project.detail?.overview}</p>
 
@@ -56,6 +57,26 @@ export default function ProjectDetails() {
                   ))}
                 </div>
               </div>
+
+              {isHospitalTokenBooking && project.detail?.video ? (
+                <div className="detail-section">
+                  <h3>Demo Video</h3>
+                  <div className="detail-video-shell detail-video-shell--tablet">
+                    <video
+                      className="detail-video-shell__video"
+                      src={project.detail.video}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="auto"
+                      controls={false}
+                      disablePictureInPicture
+                      controlsList="nodownload noplaybackrate noremoteplayback"
+                    />
+                  </div>
+                </div>
+              ) : null}
 
               <div className="project-card__actions project-card__actions--detail">
                 {project.liveUrl ? (

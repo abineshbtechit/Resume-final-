@@ -4,14 +4,13 @@ import { Link } from 'react-router-dom';
 export default function ProjectCard({ project }) {
   return (
     <article className="project-card">
-      <div className="content-shell__dots content-shell__dots--left" aria-hidden="true" />
-      <div className="content-shell__dots content-shell__dots--right" aria-hidden="true" />
       <div className="project-card__header">
         <div>
           <p className="project-card__year">{project.year}</p>
           {project.featured ? <span className="badge">Featured</span> : null}
           <h3>{project.title}</h3>
           <p className="project-card__category">{project.category}</p>
+          <p className="project-card__description">{project.description}</p>
         </div>
         <div className="project-card__media">
           {project.mediaType === 'video' ? (
@@ -19,10 +18,11 @@ export default function ProjectCard({ project }) {
           ) : (
             <img src={project.media} alt={`${project.title} preview`} />
           )}
+          
         </div>
       </div>
-
-      <p className="project-card__description">{project.description}</p>
+      
+     
 
       <div className="project-card__tags">
         {project.technologies.map((technology) => (
