@@ -7,7 +7,7 @@ export default function ProfileSidebar({ compact = false }) {
       <div className="profile-sidebar__avatarWrap">
         <img
           className="profile-sidebar__avatar"
-          src="/src/assets/profile-avatar.svg"
+          src="/assets/profile-avatar.svg"
           alt="Abinesh A S avatar"
         />
       </div>

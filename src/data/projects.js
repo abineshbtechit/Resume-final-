@@ -8,11 +8,11 @@ export const projects = [
     type: 'web',
     description:
       'A Python-based text-to-audio web application that converts custom text or online article content into downloadable speech. The application extracts article content, supports configurable voice and speed options, generates MP3 files, and provides audio playback through a Flask web interface.',
-    technologies: ['Python', 'Flask', 'gTTS', 'Newspaper3k', 'BeautifulSoup', 'HTML', 'CSS', 'JavaScript', 'Gunicorn', 'Render'],
+    technologies: ['Python', 'Flask','HTML', 'JavaScript',],
     liveUrl: 'https://text-to-speech-k17e.onrender.com/',
     githubUrl: '',
     mediaType: 'image',
-    media: '/src/assets/images/text-to-audio.svg',
+    media: '/assets/images/texttoaudio.png',
     detail: {
       overview:
         'A Flask-powered web application that turns typed text or article content into speech and downloadable MP3 audio.',
@@ -27,8 +27,8 @@ export const projects = [
       ],
       architecture:
         'Frontend form submission posts to Flask endpoints, content extraction runs through Newspaper3k and BeautifulSoup, gTTS creates audio, and the resulting file is streamed back for playback or download.',
-      screenshot: '/src/assets/images/texttoaudio.png',
-      gallery: ['/src/assets/images/texttoaudio.png'],
+      screenshot: '/assets/images/texttoaudio.png',
+      gallery: ['/assets/images/texttoaudio.png'],
       embeddedUrl: 'https://text-to-speech-k17e.onrender.com/',
     },
   },
@@ -41,11 +41,11 @@ export const projects = [
     type: 'web',
     description:
       'A real-time hospital appointment and token-booking platform designed to reduce patient waiting time. Patients can book tokens, view queue status, track the currently serving token, and receive estimated waiting-time information.',
-    technologies: ['React', 'Flask', 'Socket.IO', 'Python', 'REST API', 'Machine Learning', 'Render'],
+    technologies: ['React', 'Flask', 'Socket.IO', 'Python', 'REST API', 'Machine Learning',],
     liveUrl: '',
     githubUrl: '',
-    mediaType: 'video',
-    media: '/src/assets/videos/hospital-token-booking.mp4',
+    mediaType: 'image',
+    media: '/assets/images/hospital.png',
     detail: {
       overview:
         'A real-time queue and appointment platform with patient booking, live serving updates, and prediction-based wait time support.',
@@ -60,8 +60,9 @@ export const projects = [
       ],
       architecture:
         'The system combines a React interface with Flask APIs and Socket.IO events so queue changes push instantly to connected clients while wait-time predictions can be surfaced from backend logic.',
-      screenshot: '/src/assets/images/hospital.png',
-      gallery: ['/src/assets/images/hospital.png'],
+      screenshot: '/assets/images/hospital.png',
+      gallery: ['/assets/images/hospital.png'],
+      video: '/assets/videos/hospital-token-booking.mp4',
     },
   },
   {
@@ -77,7 +78,7 @@ export const projects = [
     liveUrl: '',
     githubUrl: '',
     mediaType: 'image',
-    media: '/src/assets/images/sign-language-converter.svg',
+    media: '/assets/images/silant.jpeg',
     detail: {
       overview: 'A mobile vision app that captures signs from camera input and classifies them through a Flask inference API.',
       features: [
@@ -89,7 +90,7 @@ export const projects = [
       ],
       architecture:
         'A Flutter frontend collects camera frames, the Flask API performs inference using a fine-tuned Hugging Face model, and results are stored for review.',
-      screenshot: '/src/assets/images/sign-language-converter.png',
+      screenshot: '/assets/images/silant.jpeg',
     },
   },
   {
@@ -105,7 +106,7 @@ export const projects = [
     liveUrl: '',
     githubUrl: '',
     mediaType: 'image',
-    media: '/src/assets/images/voice2gov.svg',
+    media: '/assets/images/voice2gov.png',
     detail: {
       overview: 'A civic grievance workflow that classifies complaints and routes them in real time with authenticated updates.',
       features: [
@@ -119,8 +120,8 @@ export const projects = [
       ],
       architecture:
         'FastAPI handles complaint intake and AI classification, React Native provides the mobile interface, and MongoDB stores grievance records and updates.',
-      screenshot: '/src/assets/images/voice2gov.png',
-      gallery: ['/src/assets/images/voice2gov.png'],
+      screenshot: '/assets/images/voice2gov.png',
+      gallery: ['/assets/images/voice2gov.png'],
     },
   },
   {
@@ -136,7 +137,7 @@ export const projects = [
     liveUrl: '',
     githubUrl: '',
     mediaType: 'image',
-    media: '/src/assets/images/api-logging-framework.svg',
+    media: '/assets/images/api.png',
     detail: {
       overview: 'A monitoring framework that captures request and response data for production APIs and provides searchable logs.',
       features: [
@@ -150,34 +151,7 @@ export const projects = [
       ],
       architecture:
         'Laravel middleware captures log payloads, React powers the monitoring UI, PostgreSQL stores structured logs, and Nginx/PHP-FPM serve the deployment environment.',
-      screenshot: '/src/assets/images/api-logging-framework.png',
+      screenshot: '/assets/images/api.png',
     },
-  },
-  {
-    slug: 'smart-home-management-system-using-iot',
-    title: 'Smart Home Management System Using IoT',
-    year: '2026',
-    category: 'IoT / Research',
-    featured: false,
-    type: 'web',
-    description:
-      'A centralized smart-home monitoring and automation system designed to improve convenience, energy efficiency, safety, and device management.',
-    technologies: ['IoT', 'Sensors', 'Automation', 'Cloud Monitoring'],
-    liveUrl: '',
-    githubUrl: '',
-    mediaType: 'image',
-    media: '/src/assets/images/placeholder-iot.svg',
-    detail: {
-      overview: 'A research-oriented IoT dashboard concept for monitoring and automating home devices from a central interface.',
-      features: [
-        'Centralized device control',
-        'Sensor-based monitoring',
-        'Energy-focused automation',
-        'Cloud-connected device status',
-      ],
-      architecture:
-        'IoT sensors feed device state into a cloud-connected control layer where the interface can monitor and automate responses.',
-      screenshot: '/src/assets/images/placeholder-iot.svg',
-    },
-  },
+  }
 ];
